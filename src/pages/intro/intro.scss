@@ -1,24 +1,26 @@
 page-intro {
 
-  position: relative;
-
-  .steps-container {
+  .intro-container {
+    height: 65vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
-    min-height: 200px;
-    .step-item {
-      span {
-        margin-left: 4px;
+
+
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .step-item {
+        padding: 20px 0px;
+        span {
+          margin-left: 4px;
+        }
       }
     }
   }
 
-
-  .btn-next {
-    position: absolute;
-    bottom: 20px;
-  }
 
 }
