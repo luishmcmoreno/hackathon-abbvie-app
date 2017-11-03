@@ -18,6 +18,10 @@ export class CompleteProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  public completeProfile(): void {
+    this.navCtrl.setRoot('HomePage');
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompleteProfilePage');
   }
