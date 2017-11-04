@@ -27,7 +27,7 @@ export class SelectHealthPlanPage {
     const loader = this._createLoader();
     setTimeout(() => {
       loader.dismiss();
-      this.navCtrl.push('CompleteProfilePage');
+      this.navCtrl.setRoot('HomePage');
     }, 2500);
   }
 
