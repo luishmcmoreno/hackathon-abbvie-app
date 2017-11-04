@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SelectHealthPlanPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, LoadingController, NavController, NavParams, ToastController, Loading } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,11 +8,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SelectHealthPlanPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public isPasswordVisible = false;
+  public healthPlan: string;
+  public showSpinner: boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SelectHealthPlanPage');
+  }
+
+  public toggleInputType(): void {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
+
+  public connect() {
+    const loader = this._createLoader();
+    setTimeout(() => {
+      loader.dismiss();
+      this.navCtrl.push('CompleteProfilePage');
+    }, 2500);
+  }
+
+  public cancel() {
+    this.navCtrl.pop();
+  }
+
+  private _createLoader(): Loading {
+    const loader = this.loadingCtrl.create({
+      content: 'Conectando com o plano de saúde. Isto pode levar alguns minutos.',
+      spinner: 'bubbles'
+    });
+    loader.present();
+    return loader;
   }
 
 }
