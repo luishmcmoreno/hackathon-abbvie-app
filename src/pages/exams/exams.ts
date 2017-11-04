@@ -15,11 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ExamsPage {
 
+  public searching: boolean;
+  public searchText: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ExamsPage');
+  public loadData() {
+    if (!this.searchText || this.searching) {
+      return;
+    }
+
+    this.searching = true;
+    setTimeout(() => {
+      this.searching = false;
+    }, 1000);
   }
 
 }

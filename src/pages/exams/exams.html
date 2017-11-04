@@ -18,6 +18,44 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+    <div class="searchbox">
+      <ion-searchbar
+        cancelButtonText="Cancelar"
+        [showCancelButton]="true"
+        placeholder="Pesquise por seus exames"
+        debounce="600"
+        (ionInput)="loadData($event)"
+        [(ngModel)]="searchText">
+    </ion-searchbar>
+    </div>
 
-</ion-content>
+    <ion-item-divider color="light">
+      <h2 ion-text color="primary">Todas os exames:</h2>
+    </ion-item-divider>
+
+    <div *ngIf="searching" class="search-spinner">
+      <ion-spinner name="bubbles"></ion-spinner>
+      <p>Buscando por <b>{{ searchText }}</b>...</p>
+    </div>
+
+    <div *ngIf="!searching">
+        <ion-item no-lines text-wrap>
+          <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
+          <p>Instituto Hermes Pardini - 02/11 as 17:251</p>
+          <p item-right ion-text color="secondary">+50 pontos</p>
+        </ion-item>
+
+        <ion-item no-lines text-wrap>
+          <h4 ion-text>Hemograma com contagem de plaquetas ou frações (eritograma leuocgrama plaquetas)</h4>
+          <p>Hospital Lifecenter - 12/05 as 18:20</p>
+          <p item-right ion-text color="secondary">+50 pontos</p>
+        </ion-item>
+
+        <ion-item no-lines text-wrap>
+          <h4 ion-text>Dímero D - pesquisa e/ou dosagem</h4>
+          <p>Instituto Hermes Pardini - 14/04 as 11:58</p>
+          <p item-right ion-text color="secondary">+50 pontos</p>
+        </ion-item>
+    </div>
+  </ion-content>
