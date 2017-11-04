@@ -16,7 +16,7 @@
 
 <ion-content>
   <ion-item no-lines class="exam-info">
-    <h2 text-center text-wrap>Hemograma com contagem de plaquetas ou frações (eritograma leucograma plaquetas)</h2>
+    <h1 text-center text-wrap>Hemograma com contagem de plaquetas ou frações (eritograma leucograma plaquetas)</h1>
     <p text-center class="location">Hospital Lifecenter - 12/05 as 18:20</p>
   </ion-item>
 
@@ -29,8 +29,8 @@
   <div padding>
     <button ion-button color="secondary" block (click)="uploadFile()">Anexar resultado</button>
     <div class="pdf" *ngIf="showFile">
-      <ion-icon name="document"></ion-icon>
-      <p>protocolo-cemig.pdf</p>
+      <img src="assets/imgs/exame.jpg" alt="">
+      <img src="assets/imgs/exame2.png" alt="">
     </div>
   </div>
 
@@ -51,7 +51,7 @@
   </ion-item>
   <ion-item>
     <span text-wrap>Valor obtido: <span ion-text color="secondary">+{{points}} pontos</span></span>
-    <span item-right text-center>Anexe o resultado <br> para dobrar</span>
+    <span item-right text-center *ngIf="!showFile">Anexe o resultado <br> para dobrar</span>
   </ion-item>
 
 </ion-content>
