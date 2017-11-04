@@ -22,4 +22,12 @@ export class FeedPage {
     console.log('ionViewDidLoad FeedPage');
   }
 
+  public goExams() {
+    this.navCtrl.parent.select(1);
+  }
+
+  public goAppointments() {
+    this.navCtrl.parent.select(2);
+  }
+
 }
