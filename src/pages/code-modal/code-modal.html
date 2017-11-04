@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Código</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">Ok</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container-flex">
+    <ion-icon name="ios-information-circle-outline" color="primary"></ion-icon>
+    <p text-wrap text-center>
+      Informe o código abaixo ao seu médico para que ele tenha acesso a todo seu histórico.
+    </p>
+    <p text-wrap text-center ion-text color="danger" class="code">
+      Y29ycmlkY
+    </p>
+    <p text-wrap text-center>
+      Obs.: Este código irá expirar em 12 horas.
+    </p>
+  </div>
+
+  <div class="buttons-bottom" padding>
+    <button ion-button block (click)="dismiss()">Entendi</button>
+  </div>
+</ion-content>
