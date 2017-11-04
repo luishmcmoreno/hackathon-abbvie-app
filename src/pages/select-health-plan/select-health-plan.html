@@ -5,19 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Plano de saúde</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <p>Conecte seu plano de saúde para ter todo o controle de sua saúde.</p>
 
   <ion-item>
-    <ion-label stacked>Plano de Saúde</ion-label>
+    <ion-label floating>Plano de Saúde</ion-label>
     <ion-select [(ngModel)]="healthPlan">
       <ion-option value="Casu">Casu</ion-option>
       <ion-option value="Unimed">Unimed</ion-option>
@@ -37,13 +34,12 @@
     </button>
   </ion-item>
 
-  <ion-item>
-    <ion-label text-wrap>Autorizo o <b>Corrida pela Saúde</b > a, em meu nome acessar os dados do meu plano de saúde <b>em modo de visualização.</b></ion-label>
-    <ion-checkbox></ion-checkbox>
-  </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Autorizo o <b>Corrida pela Saúde</b > a, em meu nome acessar os dados do meu plano de saúde <b>em modo de visualização.</b></ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
 
-  <button ion-button block color="primary" (click)="connect()"> Conectar </button>
-  <div text-left>
-    <button type="button" ion-button clear color="primary" (click)="cancel()" small>Cancelar</button>
-  </div>
+    <div class="buttons-bottom" padding>
+      <button ion-button block color="primary" (click)="connect()"> Conectar </button>
+    </div>
 </ion-content>
