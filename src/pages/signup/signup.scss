@@ -1,3 +1,16 @@
 page-signup {
-
+    .scroll-content {
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            background: url(../assets/imgs/health.jpg) center center no-repeat;
+            background-size: cover;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
