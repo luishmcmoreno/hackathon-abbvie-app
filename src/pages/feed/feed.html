@@ -20,27 +20,76 @@
 
 <ion-content>
   <ion-item-divider color="light">
-    <p ion-text color="primary">Status atual:</p>
+    <h2 ion-text color="primary">Status atual:</h2>
   </ion-item-divider>
-  <div padding>
-    <p>Cuidado com a saúde ----- <span ion-text text-wrap color="danger">Menor do que deveria</span></p>
+  <ion-item no-lines>
+    <h4 ion-text>Cuidado com a saúde --</h4>
+    <p item-right ion-text color="danger">Menor do que deveria</p>
+  </ion-item>
+
+  <ion-item-divider color="light">
+    <h2 ion-text color="primary">Últimos exames:</h2>
+  </ion-item-divider>
+  <ion-item no-lines text-wrap>
+    <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
+    <p>Instituto Hermes Pardini - 02/11 as 11:58</p>
+    <p item-right ion-text color="secondary">+50 pontos</p>
+  </ion-item>
+
+  <ion-item no-lines text-wrap>
+    <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
+    <p>Hospital Lifecenter - 12/05 as 18:00</p>
+    <p item-right ion-text color="secondary">
+      +25 pontos
+      <br>
+      <span ion-text color="dark" text-center>Anexe o
+        <br> resultado
+        <br> para dobrar.</span>
+    </p>
+  </ion-item>
+  <div text-left>
+    <button type="button" ion-button clear color="primary" small (click)="goExams()">Ver todos os exames</button>
   </div>
 
   <ion-item-divider color="light">
-    <p ion-text color="primary">Últimos exames:</p>
+    <h2 ion-text color="primary">Bronca do mês</h2>
   </ion-item-divider>
   <ion-item no-lines text-wrap>
-    <h2 class="item-title" ion-text>Doppler colorido venoso inferior - unilateral</h2>
-    <p class="item-subtitle">Instituto Hermes Pardini</p>
-    <p item-right ion-text color="secondary">+50 pontos</p>
+    <h4 ion-text text-wrap>Você faz parte do grupo de homens com mais de 45 anos que não fizeram o exame de próstata. Estudos indicam que um a cada
+      seis homens vão desenvolver este câncer ao logo da sua vida. </h4>
+    <p ion-text color="secondary">Obrigado, mas já realizei o exame.</p>
+    <p item-right ion-text color="danger">
+      -100 pontos
+      <br>
+      <span ion-text color="dark" text-center>Realize o
+        <br> exame para
+        <br> receber 100 pontos.</span>
+    </p>
   </ion-item>
 
+
+  <ion-item-divider color="light">
+    <h2 ion-text color="primary">Últimas consultas:</h2>
+  </ion-item-divider>
   <ion-item no-lines text-wrap>
-    <h2 class="item-title" ion-text>Doppler colorido venoso inferior - unilateral</h2>
-    <p class="item-subtitle">Instituto Hermes Pardini</p>
-    <p item-right ion-text color="secondary">+50 pontos</p>
-  </ion-item>
+      <h4 ion-text>Consultório de Endocrinologia e Metabologia</h4>
+      <p>Maria Mendes Nogueira - 02/11 as 11:58</p>
+      <p item-right ion-text color="secondary">+10 pontos</p>
+    </ion-item>
 
+    <ion-item no-lines text-wrap>
+      <h4 ion-text>Consultório de Endocrinologia e Metabologia</h4>
+      <p>Adalberto Freire - 12/05 as 18:20</p>
+      <p item-right ion-text color="secondary">+10 pontos</p>
+    </ion-item>
+    <div text-left>
+      <button type="button" ion-button clear color="primary" small (click)="goAppointments()">Ver todas as consultas</button>
+    </div>
+
+
+    <ion-item-divider color="light">
+      <h2 ion-text color="primary">Evolução do controle da sua saúde</h2>
+    </ion-item-divider>
 
 
 </ion-content>
