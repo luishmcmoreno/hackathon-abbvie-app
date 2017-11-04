@@ -17,7 +17,9 @@ import { Chart } from 'chart.js';
 export class FeedPage {
 
   @ViewChild('lineCanvas') lineChartElem;
+  @ViewChild('pieCanvas') pieChartElem;
   public lineChart: any;
+  public pieChart: any;
   public controlCollapsible: any = {
     status: true,
     exams: false,
@@ -52,10 +54,27 @@ export class FeedPage {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [65, 59, 80, 81, 56, 55, 40],
+          data: [23, 28, 31, 45, 56, 74, 75],
           spanGaps: false,
       }]}
-    });  
+    });
+
+    this.pieChart = new Chart(this.pieChartElem.nativeElement, {
+      type: 'pie',
+      data: {
+      labels: ["Usuários piores", "Usuários melhores"],
+      datasets: [{
+      label: 'Comparação de usuários',
+      data: [75, 25],
+      backgroundColor: [
+        'rgba(50, 219, 100, 1)',
+        'rgba(212, 212, 212, 1)'
+      ],
+      hoverBackgroundColor: [
+        "#FF6384",
+        "#36A2EB"
+      ]}]}
+    });
   }
 
   ionViewDidLoad() {

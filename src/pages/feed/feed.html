@@ -65,8 +65,6 @@
       </p>
     </ion-item>
   </div>
-
-
   <ion-item-divider color="light" (click)="toggleCollapsible('attempts')">
     <h2 ion-text color="primary">Últimas consultas:</h2>
     <ion-icon item-right [name]="controlCollapsible.attempts ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
@@ -93,4 +91,9 @@
   <ion-item>
       <canvas #lineCanvas></canvas>
   </ion-item>
+  <ion-item-divider color="light">
+    <h2 ion-text color="primary">Evolução do controle da sua saúde</h2>
+  </ion-item-divider>
+  <p padding-horizontal>Você está melhor no controle de sua saúde do que 75% dos usuários deste aplicativo </p>
+  <canvas #pieCanvas></canvas>
 </ion-content>
