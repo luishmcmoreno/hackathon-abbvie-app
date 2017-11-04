@@ -1,0 +1,27 @@
+page-exam {
+
+  .pdf {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: map-get($colors, secondary);
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+
+  .exam-info {
+    background-color: map-get($colors, primary);
+    color: #fff;
+
+    .location {
+      margin-top: 15px;
+      color: #fff;
+    }
+
+  }
+
+
+}
