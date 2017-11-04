@@ -20,7 +20,7 @@
 
 <ion-content>
   <ion-item-divider color="light" (click)="toggleCollapsible('status')">
-    <h2 ion-text color="primary">Status atual:</h2>
+    Status atual:
     <ion-icon item-right [name]="controlCollapsible.status ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <ion-item no-lines *ngIf="controlCollapsible.status">
@@ -29,7 +29,7 @@
   </ion-item>
 
   <ion-item-divider color="light" (click)="toggleCollapsible('exams')">
-    <h2 ion-text color="primary">Últimos exames:</h2>
+    Últimos exames:
     <ion-icon item-right [name]="controlCollapsible.exams ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <div *ngIf="controlCollapsible.exams">
@@ -52,7 +52,7 @@
   </div>
 
   <ion-item-divider color="light" (click)="toggleCollapsible('warning')">
-    <h2 ion-text color="primary">Bronca do mês</h2>
+    Bronca do mês
     <ion-icon item-right [name]="controlCollapsible.warning ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <div *ngIf="controlCollapsible.warning">
@@ -66,7 +66,7 @@
     </ion-item>
   </div>
   <ion-item-divider color="light" (click)="toggleCollapsible('attempts')">
-    <h2 ion-text color="primary">Últimas consultas:</h2>
+    Últimas consultas:
     <ion-icon item-right [name]="controlCollapsible.attempts ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <div *ngIf="controlCollapsible.attempts">
@@ -86,13 +86,13 @@
     </div>
   </div>
   <ion-item-divider color="light">
-    <h2 ion-text color="primary">Evolução do controle da sua saúde</h2>
+    Evolução do controle da sua saúde
   </ion-item-divider>
   <ion-item>
       <canvas #lineCanvas></canvas>
   </ion-item>
   <ion-item-divider color="light">
-    <h2 ion-text color="primary">Comparativo entre usuários</h2>
+    Comparativo entre usuários
   </ion-item-divider>
   <p padding-horizontal>Você está melhor no controle de sua saúde do que 75% dos usuários deste aplicativo </p>
   <canvas #pieCanvas></canvas>
