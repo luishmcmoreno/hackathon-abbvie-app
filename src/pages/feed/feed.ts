@@ -15,6 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedPage {
 
+  public controlCollapsible: any = {
+    status: true,
+    exams: false,
+    warning: false,
+    attempts: false
+  };
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -28,6 +35,18 @@ export class FeedPage {
 
   public goAppointments() {
     this.navCtrl.parent.select(2);
+  }
+
+  public toggleCollapsible(keyToShow: string) {
+    if(this.controlCollapsible[keyToShow]) {
+      this.controlCollapsible[keyToShow] = !this.controlCollapsible[keyToShow];
+      return;
+    }
+
+    Object.keys(this.controlCollapsible).forEach(key => {
+      this.controlCollapsible[key] = false;
+    });
+    this.controlCollapsible[keyToShow] = true;
   }
 
 }

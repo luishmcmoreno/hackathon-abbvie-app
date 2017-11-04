@@ -21,50 +21,58 @@
 <ion-content>
   <ion-item-divider color="light">
     <h2 ion-text color="primary">Status atual:</h2>
-    <ion-icon></ion-icon>ios-arrow-forward
+    <ion-icon item-right [name]="controlCollapsible.status ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('status')"></ion-icon>
   </ion-item-divider>
-  <ion-item no-lines>
+  <ion-item no-lines *ngIf="controlCollapsible.status">
     <h4 ion-text>Cuidado com a saúde --</h4>
     <p item-right ion-text color="danger">Menor do que deveria</p>
   </ion-item>
 
   <ion-item-divider color="light">
     <h2 ion-text color="primary">Últimos exames:</h2>
+    <ion-icon item-right [name]="controlCollapsible.exams ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('exams')"></ion-icon>
   </ion-item-divider>
-  <ion-item no-lines text-wrap>
-    <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
-    <p>Instituto Hermes Pardini - 02/11 as 11:58</p>
-    <p item-right ion-text color="secondary">+50 pontos</p>
-  </ion-item>
+  <div *ngIf="controlCollapsible.exams">
+    <ion-item no-lines text-wrap>
+      <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
+      <p>Instituto Hermes Pardini - 02/11 as 11:58</p>
+      <p item-right ion-text color="secondary">+50 pontos</p>
+    </ion-item>
 
-  <ion-item no-lines text-wrap>
-    <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
-    <p>Hospital Lifecenter - 12/05 as 18:00</p>
-    <p item-right ion-text color="secondary">
-      +25 pontos
-    </p>
-  </ion-item>
-  <div text-left>
-    <button type="button" ion-button clear color="primary" small (click)="goExams()">Ver todos os exames</button>
+    <ion-item no-lines text-wrap>
+      <h4 ion-text>Doppler colorido venoso inferior - unilateral</h4>
+      <p>Hospital Lifecenter - 12/05 as 18:00</p>
+      <p item-right ion-text color="secondary">
+        +25 pontos
+      </p>
+    </ion-item>
+    <div text-left>
+      <button type="button" ion-button clear color="primary" small (click)="goExams()">Ver todos os exames</button>
+    </div>
   </div>
 
   <ion-item-divider color="light">
     <h2 ion-text color="primary">Bronca do mês</h2>
+    <ion-icon item-right [name]="controlCollapsible.warning ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('warning')"></ion-icon>
   </ion-item-divider>
-  <ion-item no-lines text-wrap>
-    <h4 ion-text text-wrap>Você faz parte do grupo de homens com mais de 45 anos que não fizeram o exame de próstata. Estudos indicam que um a cada
-      seis homens vão desenvolver este câncer ao logo da sua vida. </h4>
-    <p ion-text color="secondary">Obrigado, mas já realizei o exame.</p>
-    <p item-right ion-text color="danger">
-      -100 pontos
-    </p>
-  </ion-item>
+  <div *ngIf="controlCollapsible.warning">
+    <ion-item no-lines text-wrap>
+      <h4 ion-text text-wrap>Você faz parte do grupo de homens com mais de 45 anos que não fizeram o exame de próstata. Estudos indicam que um a cada
+        seis homens vão desenvolver este câncer ao logo da sua vida. </h4>
+      <p ion-text color="secondary">Obrigado, mas já realizei o exame.</p>
+      <p item-right ion-text color="danger">
+        -100 pontos
+      </p>
+    </ion-item>
+  </div>
 
 
   <ion-item-divider color="light">
     <h2 ion-text color="primary">Últimas consultas:</h2>
+    <ion-icon item-right [name]="controlCollapsible.attempts ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('attempts')"></ion-icon>
   </ion-item-divider>
-  <ion-item no-lines text-wrap>
+  <div *ngIf="controlCollapsible.attempts">
+    <ion-item no-lines text-wrap>
       <h4 ion-text>Consultório de Endocrinologia e Metabologia</h4>
       <p>Maria Mendes Nogueira - 02/11 as 11:58</p>
       <p item-right ion-text color="secondary">+10 pontos</p>
@@ -78,14 +86,12 @@
     <div text-left>
       <button type="button" ion-button clear color="primary" small (click)="goAppointments()">Ver todas as consultas</button>
     </div>
+  </div>
 
 
-    <ion-item-divider color="light">
-      <h2 ion-text color="primary">Evolução do controle da sua saúde</h2>
-    </ion-item-divider>
-    <ion-item>
-
-    </ion-item>
+  <ion-item-divider color="light">
+    <h2 ion-text color="primary">Evolução do controle da sua saúde</h2>
+  </ion-item-divider>
 
 
 
