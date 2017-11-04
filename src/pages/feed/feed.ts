@@ -16,8 +16,14 @@ import { Chart } from 'chart.js';
 })
 export class FeedPage {
 
-  @ViewChild('lineChart') lineChartElem;
+  @ViewChild('lineCanvas') lineChartElem;
   public lineChart: any;
+  public controlCollapsible: any = {
+    status: true,
+    exams: false,
+    warning: false,
+    attempts: false
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,9 +32,9 @@ export class FeedPage {
     this.lineChart = new Chart(this.lineChartElem.nativeElement, {
       type: 'line',
       data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho"],
         datasets: [{
-          label: "My First dataset",
+          label: "Evolução",
           fill: false,
           lineTension: 0.1,
           backgroundColor: "rgba(75,192,192,0.4)",
@@ -63,6 +69,18 @@ export class FeedPage {
 
   public goAppointments() {
     this.navCtrl.parent.select(2);
+  }
+
+  public toggleCollapsible(keyToShow: string) {
+    if(this.controlCollapsible[keyToShow]) {
+      this.controlCollapsible[keyToShow] = !this.controlCollapsible[keyToShow];
+      return;
+    }
+
+    Object.keys(this.controlCollapsible).forEach(key => {
+      this.controlCollapsible[key] = false;
+    });
+    this.controlCollapsible[keyToShow] = true;
   }
 
 }
