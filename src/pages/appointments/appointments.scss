@@ -3,4 +3,12 @@ page-appointments {
     background-color: map-get($colors, primary);
   }
 
+  .search-spinner {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
