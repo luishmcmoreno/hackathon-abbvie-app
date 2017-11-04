@@ -5,14 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-content padding>
-  <div class="logo">
+
+  <div class="logo" text-center>
     <img src="assets/imgs/logo.png" alt="" class="logo-image">
+    <h2> Corrida pela Saúde </h2>
   </div>
 
   <div class="buttons-bottom" padding>
     <button ion-button block color="primary" navPush="IntroPage"> Cadastre-se </button>
     <div text-center>
-      <button ion-button clear color="dark">Já sou cadastrado</button>
+      <button ion-button clear color="dark" (click)="login()">Já sou cadastrado</button>
     </div>
   </div>
 </ion-content>
