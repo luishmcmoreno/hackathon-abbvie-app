@@ -19,18 +19,18 @@
 
 
 <ion-content>
-  <ion-item-divider color="light">
+  <ion-item-divider color="light" (click)="toggleCollapsible('status')">
     <h2 ion-text color="primary">Status atual:</h2>
-    <ion-icon item-right [name]="controlCollapsible.status ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('status')"></ion-icon>
+    <ion-icon item-right [name]="controlCollapsible.status ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <ion-item no-lines *ngIf="controlCollapsible.status">
     <h4 ion-text>Cuidado com a saúde --</h4>
     <p item-right ion-text color="danger">Menor do que deveria</p>
   </ion-item>
 
-  <ion-item-divider color="light">
+  <ion-item-divider color="light" (click)="toggleCollapsible('exams')">
     <h2 ion-text color="primary">Últimos exames:</h2>
-    <ion-icon item-right [name]="controlCollapsible.exams ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('exams')"></ion-icon>
+    <ion-icon item-right [name]="controlCollapsible.exams ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <div *ngIf="controlCollapsible.exams">
     <ion-item no-lines text-wrap>
@@ -51,9 +51,9 @@
     </div>
   </div>
 
-  <ion-item-divider color="light">
+  <ion-item-divider color="light" (click)="toggleCollapsible('warning')">
     <h2 ion-text color="primary">Bronca do mês</h2>
-    <ion-icon item-right [name]="controlCollapsible.warning ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('warning')"></ion-icon>
+    <ion-icon item-right [name]="controlCollapsible.warning ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <div *ngIf="controlCollapsible.warning">
     <ion-item no-lines text-wrap>
@@ -67,9 +67,9 @@
   </div>
 
 
-  <ion-item-divider color="light">
+  <ion-item-divider color="light" (click)="toggleCollapsible('attempts')">
     <h2 ion-text color="primary">Últimas consultas:</h2>
-    <ion-icon item-right [name]="controlCollapsible.attempts ? 'ios-arrow-down' : 'ios-arrow-forward'" (click)="toggleCollapsible('attempts')"></ion-icon>
+    <ion-icon item-right [name]="controlCollapsible.attempts ? 'ios-arrow-down' : 'ios-arrow-forward'"></ion-icon>
   </ion-item-divider>
   <div *ngIf="controlCollapsible.attempts">
     <ion-item no-lines text-wrap>
@@ -87,12 +87,10 @@
       <button type="button" ion-button clear color="primary" small (click)="goAppointments()">Ver todas as consultas</button>
     </div>
   </div>
-
-
   <ion-item-divider color="light">
     <h2 ion-text color="primary">Evolução do controle da sua saúde</h2>
   </ion-item-divider>
-
-
-
+  <ion-item>
+      <canvas #lineCanvas></canvas>
+  </ion-item>
 </ion-content>
